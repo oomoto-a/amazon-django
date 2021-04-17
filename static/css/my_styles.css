@@ -1,0 +1,69 @@
+.small-image{
+    width:150px;
+}
+
+.table-image{
+    max-width:150px;
+}
+
+.syuppin-item-table{
+    width:120%;
+}
+
+.item-field{
+    width:500px;
+}
+
+.description-field{
+    width:500px;
+    height:100px;
+}
+
+.status-field{
+    width:100px;
+}
+
+.price-field{
+    width:100px;
+}
+
+
+.textarea-wide{
+    width:90%;
+    min-height:600px;
+}
+
+.modal-searchconditions-box{
+    margin: 0px 52px;
+}
+
+.modal-label-title{
+   width: 114px;
+}
+
+.modal-witde{
+    width: 135%;
+    max-width: 135%;
+}  
+
+.modal-list-layout ul li {
+        list-style: none;
+        display: inline;
+        margin: 0 18px 0 0;
+}
+
+.modal-list-layout ul {
+    display: inline;
+    margin: 0 -38px;
+}
+
+button.stripe-button-el,
+button.stripe-button-el>span {
+  background-color: #6777ef!important;
+  background-image: none;
+}
+
+.nav-link.active{
+    background: #6777ef!important;
+    color: #f4f6f9!important;
+}

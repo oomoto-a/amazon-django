@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}マイページ{% endblock %}
+
+{% block contents %}
+ <section>
+	<div class="section-header">
+		<h1> 課金管理 </h1>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-12 col-lg-12">
+
+				<div class="card">
+					<div class="card-header">
+						<h4>1．プランの選択・支払いはこちら</h4>
+					</div>
+					<div class="card-body">
+						<p>Stripe社の決済システムを利用して決済を行います。<BR>
+						間違って決済した場合でも返金はできませんのでご注意ください。<BR>
+						クレジットカード情報は、Stripe社にて安全に保管されます。本システムにはクレジットカード情報は保存されませんのでご安心ください。</p>
+						<form action="" method="post">{% csrf_token %}
+							<input type="hidden" name="button" value="buy_button">
+                            <div  style="margin-bottom:30px;">
+                            <select class="form-select" name="plan">
+								<option selected value="">プラン選択</option>
+								{% for item in object_list %}
+                                <option value="{{ item.plan_id }},{{ item.plan_name }}">{{ item.plan_name }}</option>
+								{% endfor %}
+							</select>
+							{% for item in object_list %}
+								<input type=hidden name="plan_title" value="{{ item.plan_name }}"/>
+							{% endfor %}
+							</div>
+							
+
+                            <div>
+							<script 
+								src="https://checkout.stripe.com/checkout.js" 
+								class="stripe-button"
+								data-key="{{ publick_key }}"
+								data-locale="ja"
+								data-email="{{ user.email }}"
+								data-name="支払う"
+								data-label="支払う"
+								data-panel-label="支払う"
+								data-allow-remember-me="false"
+							>
+                            </script>
+
+                            </div>
+							</form>
+
+					</div>
+				
+				</div>
+
+				<div class="card">
+					<div class="card-header">
+						<h4>2．クレジットカードの修正はこちら</h4>
+					</div>
+					<div class="card-body">
+						
+						<!-- <a href="{% url 'my_page:mypage' %}">クレジットカード登録・修正</a> -->
+						<form action="" method="post">{% csrf_token %}
+							<input type="hidden" name="button" value="modify_button">
+							<script 
+								src="https://checkout.stripe.com/checkout.js" 
+								class="stripe-button"
+								data-key="{{ publick_key }}"
+								data-locale="ja"
+								data-email="{{ user.email }}"
+								data-name="クレジットカード情報の修正"
+								data-label="クレジットカードの修正"
+								data-panel-label="修正する"
+								data-allow-remember-me="false"
+							>
+							</script>
+							</form>
+
+				</div>
+				
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<h4>3．課金停止はこちら</h4>
+					</div>
+					<div class="card-body">
+						<p>課金を停止すると次回の引き落としは行われません。<BR>
+						   利用可能数が残っていた場合は、破棄されますのでご注意ください。</p>
+						<form action="" method="post">{% csrf_token %}
+
+                            <input type="hidden" name="button" value="cancel_button">
+                            <button onclick="return confirm('削除します。よろしいですか？')" class="btn btn-secondary">課金停止はこちら</button>
+
+						</form>
+						<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/Xq0zZpZnLzc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

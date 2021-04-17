@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}マニュアル{% endblock %}
+
+{% block contents %}
+ <section>
+	<div class="section-header">
+		<h1> マニュアル </h1>
+	</div>
+	<p>{{sample}}</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-12 col-lg-12">
+				<div class="card">
+					<div class="card-header">
+						<h4>説明動画</h4>
+					</div>
+					<div class="card-body">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/V7h8IJ031PY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<h4>１．課金設定</h4>
+					</div>
+					<div class="card-body">
+						<p>このシステムは有料ツールです。そのためクレジットカードを登録いただき課金設定をお願いします。</p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<h4>２．ASIN登録</h4>
+					</div>
+					<div class="card-body">
+						<p>リサーチしたいASINを登録してください。除外キーワードや除外ASINの設定も可能です。</p>
+						<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/Xq0zZpZnLzc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<h4>３．結果一覧</h4>
+					</div>
+					<div class="card-body">
+						<p>収集したASINを一覧表示し、グラフ出力やCSV出力が可能です。</p>
+						<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/Xq0zZpZnLzc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}マイページ{% endblock %}
+
+{% block contents %}
+ <section>
+	<div class="section-header">
+		<h1> マイページ </h1>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-12 col-lg-12">
+				<div class="card">
+					<div class="card-header">
+						<h4>１．ユーザー情報</h4>
+					</div>
+					<div class="card-body">
+						<!-- <p>ユーザー名：{{ user.get_username }}</p> --> 
+						<p>ユーザー名：{{request.user}}</p>
+						<p>会員プラン：{{ account_plan }}</p>
+						<p>課金状態：{{ account_status }}</p>
+					</div>
+				</div>
+
+					</div>
+				
+				</div>
+
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

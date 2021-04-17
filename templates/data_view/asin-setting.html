@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} ASIN登録 {% endblock %}
+
+{% block header %}
+      
+{% endblock %}
+
+{% block contents %}
+    <section>
+        <div class="section-header">
+            <h1> ASIN登録 </h1>
+        </div>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>ASIN登録</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form-horizontal" role="form" method="POST">
+                                {% csrf_token %}
+                                {{ form.non_field_errors }}
+                                <div class='form-group'>
+                                    <labal class="col-4 control-label">{{ form.asin_group_id.label }}（重複しないわかりやすい名称をつけてください）</labla>
+                                    <div class='col-4'>{{ form.asin_group_id|add_class:"form-control" }}</div>
+                                </div>
+                                <div class='form-group'>
+                                    <labal class='col-4'>{{ form.asin.label }}（最大１万件まで登録可能）</labla>
+                                    <div class='col-8'>{{form.asin|add_class:"textarea-wide form-control"}}</div>
+                                </div>
+                                <!-- <textarea name="keywords" class="textarea-wide" required="" id="id_keywords">{{ keywords }} </textarea> -->
+                                <div class="col-offset-2 col-10">
+                                    <button type="submit" class="btn btn-primary">登録</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+        // model上はサイズが指定されているが、formでは複数要素を１セルに入力のためサイズ制限を撤廃する
+        $(document).ready(function(event){
+            console.log("test")
+            //$('#id_asin').removeAttr('maxlength')
+        })
+
+    </script>
+{% endblock %}
