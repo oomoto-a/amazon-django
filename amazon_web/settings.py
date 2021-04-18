@@ -23,9 +23,58 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'fghc3@0%p8)fv8e54^o$bxmj@4jt4(k*gdclg04!2%jeghf^63'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*","127.0.0.1:8000"]
+# AMAZON＿SES関連
+AWS_SES_ACCESS_KEY_ID=os.environ.get('AWS_SES_ACCESS_KEY_ID')
+AWS_SES_SECRET_ACCESS_KEY=os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
+#EMAIL_BACKEND='django_ses.SESBackend'
+
+#ロギング
+LOGGING = {
+    'version': 1,
+    'disable_exsiting_logger': False,
+
+    #ロガーの設定
+    'loggers': {
+        # Djangoが利用するロガー
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        # amazon_webアプリケーションが利用するロガー
+        'amazon_web': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+    },
+    #　ハンドラの設定
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRoatatingFileHandler',
+            'filename': 'os.path.join(BASE_DIR, 'logs/django.log'),
+            'formatter': 'prod',
+            'when': 'D',# ログローテーション
+            'interval': 1,# ログローテーション
+            'backupCount': 7,# 保存しておくファイル数
+        }
+    },
+
+    # formatterの設定
+    'formatters': {
+        'dev': {
+            'format': '\t'.join([
+                '%(asctime)s',
+                '[%(levelname)s]',
+                '%(pathname)s(Line:%(lineno)d)',
+                '%(message)s'
+            ])
+        }
+    },
+
+}
 
 
 # Application definition
@@ -119,9 +168,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja-jp'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
+
 
 USE_I18N = True
 
