@@ -54,7 +54,7 @@ LOGGING = {
         'console': {
             'level': 'INFO',
             'class': 'logging.handlers.TimedRoatatingFileHandler',
-            'filename': 'os.path.join(BASE_DIR, 'logs/django.log'),
+            'filename': os.path.join(BASE_DIR, 'logs/django.log'),
             'formatter': 'prod',
             'when': 'D',# ログローテーション
             'interval': 1,# ログローテーション
