@@ -137,7 +137,7 @@ DATABASES = {
         'NAME': 'amazon',
         'USER': 'db_admin',
         'PASSWORD': 'db_admin_amazon',
-        'HOST': 'ec2-3-115-228-246.ap-northeast-1.compute.amazonaws.com',
+        'HOST': '127.0.0.1',
         'PORT': '33306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
