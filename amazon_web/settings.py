@@ -134,10 +134,10 @@ WSGI_APPLICATION = 'amazon_web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'amazon_web',
-        'USER': 'docker',
-        'PASSWORD': 'docker',
-        'HOST': '192.168.99.100',
+        'NAME': 'amazon',
+        'USER': 'db_admin',
+        'PASSWORD': 'db_admin_amazon',
+        'HOST': 'ec2-3-115-228-246.ap-northeast-1.compute.amazonaws.com',
         'PORT': '33306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
