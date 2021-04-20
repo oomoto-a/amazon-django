@@ -189,7 +189,7 @@ MEDIA_ROOT = '/usr/share/nginx/html/media' # nginxにmediaを配置する
 #    os.path.join(BASE_DIR, 'static')
 #)
 
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
 # ログイン後トップページにリダイレクト
 LOGIN_REDIRECT_URL = '/my_page/'
