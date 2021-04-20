@@ -183,9 +183,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = '/home/app_admin/venv_private_diary/amazon-django/static' # プロジェクト直下にstaticを配置する
+STATIC_ROOT = '/usr/share/nginx/html/static' # nginxにstaticを配置する
+MEDIA_ROOT = '/usr/share/nginx/html/media' # nginxにmediaを配置する
 #STATICFILES_DIRS = (
-#    '/home/app_admin/venv_private_diary/amazon-django/static'
+#    os.path.join(BASE_DIR, 'static')
 #)
 
 #STATIC_URL = '/static/'
