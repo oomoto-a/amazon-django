@@ -183,12 +183,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') # プロジェクト直下にstaticを配置する
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'static'),
-#)
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static') # プロジェクト直下にstaticを配置する
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
 # ログイン後トップページにリダイレクト
 LOGIN_REDIRECT_URL = '/my_page/'
