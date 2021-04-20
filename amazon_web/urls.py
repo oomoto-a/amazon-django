@@ -26,5 +26,5 @@ urlpatterns = [
     path('my_page/', include("my_page.urls")), 
     path('data_view/', include("data_view.urls")),  
     path('asin/', include("asin.urls")),
-    path('account/', include("account.urls")),
+    # path('account/', include("account.urls")),
 ]

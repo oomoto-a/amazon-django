@@ -16,11 +16,9 @@ Including another URLconf
 from django.urls import path
 from django.urls import path, include
 
-from data_view.views.asin_setting import *
 from data_view.views.manual import *
 
 app_name="data_view"
 urlpatterns = [
     path('manual',Manual.as_view(), name="manual"),
-    path('asin-setting',ASINSettingView.as_view(), name="asin-setting")
 ]

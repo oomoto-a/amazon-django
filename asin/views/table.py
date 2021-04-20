@@ -30,7 +30,8 @@ class AsinGroupIdTable(tables.Table):
     ASIN取得状況画面用テーブル
     AsinGroupIdベース
     """
-    asin_group_id = tables.LinkColumn("asin:edit_asin",args=[A("asin_group_id")], verbose_name="ASINグループID")
+    # asin_group_id = tables.LinkColumn("asin:edit_asin",args=[A("asin_group_id")], verbose_name="ASINグループID")
+    asin_group_id = tables.Column(verbose_name="ASINグループID")
     status = StatusColumn()
     create_date = tables.DateTimeColumn(format="Y/m/d G:i:s")
     complete_date = tables.DateTimeColumn(format="Y/m/d G:i:s")

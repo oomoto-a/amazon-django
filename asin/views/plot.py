@@ -90,13 +90,13 @@ def plot_product(product, keys):
         y = np.append(product['data'][key], product['data'][key][-1]).astype(np.float)
         replace_invalid(y)
         #　散布図
-        # marker = product['data'][key+'_type']
+        marker = product['data'][key+'_type']
         color = product['data'][key+'_color']
-        # ax =  plt.scatter(x,  y, facecolor='None',marker=marker,s=150, edgecolors=color, linewidth=3)
+        ax =  plt.scatter(x,  y, facecolor='None',marker=marker,s=150, edgecolors=color, linewidth=3)
         # 折れ線(点入り)
         # plt.plot(x,y, 'rs:', color=color)
         # 折れ線
-        plt.plot(x,y, color=color)
+        # plt.plot(x,y, color=color)
         # ステッププロット 最初のイメージであげたパターン
         # plt.step(x,y,where='pre',color=color)
 
