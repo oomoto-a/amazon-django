@@ -81,10 +81,10 @@ def get_svg(request, id):
         # plt.step(x,y,where='pre',color=color)
 
     #10^x　表記にする
-    # axes.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
-    # axes.ticklabel_format(style="sci",  axis="y",scilimits=(0,0))
+    axes.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+    axes.ticklabel_format(style="sci",  axis="y",scilimits=(0,0))
 
-    ax = plt.plot(  color=('b','r') , alpha=0.6  )
+ 
 
     add_data(years, total_data, "s", cmap(4) )
     pricelegend.append("全")
