@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'data_view',
     'my_page',
+    'population',
     'asin.apps.AsinConfig',
-    'stripe',
  #   'checkout.apps.CheckoutConfig',
     'django_tables2',
 ]

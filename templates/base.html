@@ -53,6 +53,15 @@
                   <li><a class="nav-link" href="#"></a></li>
                 </ul>
               </li>
+
+              <li class="menu-header">人口表示</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-table"></i><span>人口表示</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="{% url 'population:pop_top' %}">人口</a></li>
+                  <li><a class="nav-link" href="#"></a></li>
+                </ul>
+              </li>
 							
             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
               <a href="{% url 'data_view:manual' %}" class="btn btn-primary btn-lg btn-block btn-icon-split">

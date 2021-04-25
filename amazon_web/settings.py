@@ -91,6 +91,7 @@ INSTALLED_APPS = [
     'my_page',
     'asin.apps.AsinConfig',
     'stripe',
+    'population',
  #   'checkout.apps.CheckoutConfig',
     'django_tables2',
 ]
@@ -135,8 +136,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'amazon',
-        'USER': 'db_admin',
-        'PASSWORD': 'db_admin_amazon',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '33306',
         'OPTIONS': {
