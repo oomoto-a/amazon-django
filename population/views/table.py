@@ -31,12 +31,16 @@ class PopulationTable(tables.Table):
     人口画面用テーブル
     Population
     """
+    # prefectures_code = tables.Column(verbose_name="都道府県コード")
     prefectures = tables.Column(verbose_name="都道府県")
     #　リンク用
     plot = tables.LinkColumn("population:pop_plot", args=[A("prefectures_code")], 
                     verbose_name = "",text="詳細グラフ", 
                     attrs={"a": {"class": "btn btn-success text-nowrap"}} 
                     )
+    population = tables.Column(verbose_name="総人口")
+    man = tables.Column(verbose_name="人口(男性)")
+    woman = tables.Column(verbose_name="人口(女性)")
 
 
 
@@ -44,8 +48,12 @@ class PopulationTable(tables.Table):
         model = Population
         template_name = 'django_tables2/bootstrap4.html'
         # 表示する列column
-        fields = ('prefectures',
+        fields = ('prefectures_code',
+                'prefectures',
                 'plot',
+                'population',
+                'man',
+                'woman',
 
         )    
         attrs = {"class": "table table-striped"}
