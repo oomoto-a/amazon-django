@@ -5,14 +5,12 @@ from asin.const import Const
 from django_tables2.utils import A
 from population.models import Population
 
-class StatusColumn(tables.Column):
+class PoplationColumn(tables.Column):
     """
-    ステータスの表示用カラム
+    人口の表示用カラム
     """
     def render(self, value):
-        if value in Const.kEEPA_STATUS:
-            return Const.kEEPA_STATUS[value]
-        return value
+        return int(value)
 
 class ButtonLinkColumn(tables.LinkColumn):
     """
@@ -38,9 +36,9 @@ class PopulationTable(tables.Table):
                     verbose_name = "",text="詳細グラフ", 
                     attrs={"a": {"class": "btn btn-success text-nowrap"}} 
                     )
-    population = tables.Column(verbose_name="総人口")
-    man = tables.Column(verbose_name="人口(男性)")
-    woman = tables.Column(verbose_name="人口(女性)")
+    population = PoplationColumn(verbose_name="総人口")
+    man = PoplationColumn(verbose_name="人口(男性)")
+    woman = PoplationColumn(verbose_name="人口(女性)")
 
 
 
