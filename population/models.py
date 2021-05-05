@@ -15,4 +15,4 @@ class Population(models.Model):
     create_date = models.DateTimeField(default=datetime.now, null=True, verbose_name="登録日")
 
     def __str__(self):
-        return self.account_id
+        return self.prefectures

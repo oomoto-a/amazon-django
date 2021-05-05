@@ -25,4 +25,4 @@ class Const:
     }
 
     # テーブルの1ページあたりのデフォルト件数
-    PAGE_PER_DEFAULT = 50
+    PAGE_PER_DEFAULT = 10

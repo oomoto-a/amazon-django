@@ -69,7 +69,7 @@ def get_svg(request, id):
 
     def add_data(years, y_data, marker, color):
 
-        x = years
+        x = [int(s) for s in years]
         y = [int(s) for s in y_data]
         #　散布図
         ax =  plt.scatter(x,  y, facecolor='None',marker=marker,s=150, edgecolors=color, linewidth=3)
@@ -80,8 +80,21 @@ def get_svg(request, id):
         # ステッププロット 最初のイメージであげたパターン
         # plt.step(x,y,where='pre',color=color)
 
+    #クラス設定  ※ScalarFormatterを継承
+    class FixedOrderFormatter(ScalarFormatter):
+        def __init__(self, order_of_mag=0, useOffset=True, useMathText=True):
+            self._order_of_mag = order_of_mag
+            ScalarFormatter.__init__(self, useOffset=useOffset, 
+                                    useMathText=useMathText)
+        def _set_order_of_magnitude(self):
+            self.orderOfMagnitude = self._order_of_mag
+
     #10^x　表記にする
-    axes.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+    # axes.yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+    #
+    axes.yaxis.set_major_formatter(FixedOrderFormatter(4 ,useMathText=True))
+    axes.set_ylabel('(万人)', rotation=90)
+    axes.set_xlabel('(年)', rotation=0)
     axes.ticklabel_format(style="sci",  axis="y",scilimits=(0,0))
 
  

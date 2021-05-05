@@ -4,13 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>{% block title %}{% endblock %}&mdash; Price Maste</title>
+  <title>{% block title %}{% endblock %}&mdash; Test</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   
-
+  <!-- favicon -->
+  <link rel="icon" href="{% static '/icon/favicon.ico' %}">
+ 
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
@@ -38,34 +40,34 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="#">PriceMaster</a>
+            <a href="#">django</a>
           </div>
           <!-- <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">AI</a>
           </div> -->
           <ul class="sidebar-menu">
 
-              <li class="menu-header">ASIN結果表示</li>
+              <!-- <li class="menu-header">ASIN結果表示</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-table"></i><span>ASIN結果表示</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="{% url 'asin:disp_asin_status' %}">ASIN取得状況</a></li>
                   <li><a class="nav-link" href="#"></a></li>
                 </ul>
-              </li>
+              </li> -->
 
               <li class="menu-header">人口表示</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-table"></i><span>人口表示</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="{% url 'population:pop_top' %}">人口</a></li>
+                  <li><a class="nav-link" href="{% url 'population:pop_top' %}">2015年度人口</a></li>
                   <li><a class="nav-link" href="#"></a></li>
                 </ul>
               </li>
 							
             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
               <a href="{% url 'data_view:manual' %}" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                <i class="fas fa-rocket"></i> マニュアル
+                <i class="fas fa-rocket"></i> 学習内容
               </a>
             </div>
         </aside>
@@ -79,7 +81,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; Price Master 2021
+          Copyright &copy; Test Mo 2021
         </div>
         <div class="footer-right">
           1.0.0
