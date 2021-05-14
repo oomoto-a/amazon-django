@@ -4,8 +4,6 @@ matplotlib.use('agg')
 import matplotlib.pyplot as plt
 import io
 from django.http import HttpResponse
-import numpy as np
-import datetime
 import japanize_matplotlib
 import seaborn as sns
 from cycler import cycler
@@ -26,7 +24,7 @@ def plt_to_svg():
 # 実行するビュー関数
 def get_svg(request, id):
     # 都道府県コードで絞る
-    population_datas = Population.objects.filter(prefectures_code=id)
+    population_datas = Population.objects.filter(prefectures_code=id).exclude(population="-")
 
     years = []
     man_data = []
