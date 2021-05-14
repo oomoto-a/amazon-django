@@ -21,4 +21,5 @@ from data_view.views.manual import *
 app_name="data_view"
 urlpatterns = [
     path('manual',Manual.as_view(), name="manual"),
+    path('',Manual.as_view(), name="manual"),
 ]

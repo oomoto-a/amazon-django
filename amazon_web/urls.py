@@ -22,7 +22,8 @@ admin.site.index_title = '設定変更'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('django.contrib.auth.urls')), #  追加
+    # path('', include('django.contrib.auth.urls')), #  追加
+    path('', include("data_view.urls")), #  修正
     path('my_page/', include("my_page.urls")), 
     path('data_view/', include("data_view.urls")),  
     path('asin/', include("asin.urls")),
