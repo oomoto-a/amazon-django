@@ -88,8 +88,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'data_view',
-    'my_page',
-    'asin.apps.AsinConfig',
+    # 'my_page',
+    # 'asin.apps.AsinConfig',
     'stripe',
     'population',
  #   'checkout.apps.CheckoutConfig',
@@ -196,8 +196,3 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/my_page/'
 LOGIN_URL = 'login'
 
-# STRIPE_SECRET_KEY = "sk_test_51HyaPtA9WmOGZ5uPuVS3r317Xr6hLrMuLnxoDbyVRQYXrVipUmNYpvGONoPv01LCkGceGHfon0XunAizJA7UJR2q00pvtwY2si"
-# STRIPE_PUBLISHABLE_KEY = "pk_test_51HyaPtA9WmOGZ5uPt6PuSYJx6ZlVtOuH8f7qxIIHojhk5STwhrTOnnkmw7iMqws8DcoXxritKkaVOvV45MmB68g000yLHygluB"
-
-STRIPE_SECRET_KEY = "sk_test_51IJKmgBw8LEeJzi9KaGooKywDFdiQA2bquy7tMZflRXD20D79DC8M3DO9tuFTrgOEh4Eiym4hA5c5oyQwWIv1rDb00WOghVylj"
-STRIPE_PUBLISHABLE_KEY = "pk_test_51IJKmgBw8LEeJzi9GZP32CBOH8JmPfWbZ82SlDxWsijbVF56S2CMU693PhjnR9OZHRS9VUTZ6fadcxdgAoWitpwj00VKa0cYts"

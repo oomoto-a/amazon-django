@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from amazon_web.manual import *
 
 admin.site.site_title = 'PriceMaster 管理画面' 
 admin.site.site_header = 'PriceMaster 管理画面' 
@@ -23,10 +24,10 @@ admin.site.index_title = '設定変更'
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('django.contrib.auth.urls')), #  追加
-    path('', include("data_view.urls")), #  修正
-    path('my_page/', include("my_page.urls")), 
+    path('',Top.as_view(), name="manual"), #  修正
+    # path('my_page/', include("my_page.urls")), 
     path('data_view/', include("data_view.urls")),  
-    path('asin/', include("asin.urls")),
+    # path('asin/', include("asin.urls")),
     path('population/', include("population.urls")),
     # path('account/', include("account.urls")),
 ]
